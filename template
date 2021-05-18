@@ -1,10 +1,10 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.24.84
+version=1.26.25
 revision=1
 only_for_archs="x86_64"
 short_desc="Secure, fast and private web browser with ad blocker"
-maintainer="Reback 00 <reback00@protonmail.com>"
+maintainer="ElPresidentePoole <elpresidentepoole@gmail.com>"
 hostmakedepends="tar xz"
 license="Mozilla Public License Version 2.0"
 homepage="https://brave.com"
