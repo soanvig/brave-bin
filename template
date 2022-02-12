@@ -1,6 +1,6 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.34.80
+version=1.35.101
 revision=1
 only_for_archs="x86_64"
 short_desc="Secure, fast and private web browser with ad blocker"
@@ -9,31 +9,30 @@ hostmakedepends="tar xz" # need gtk+3!
 license="Mozilla Public License Version 2.0"
 homepage="https://brave.com"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_amd64.deb"
-checksum=D8DF9D5D01957E6DC6B1A28AA37101C4BBBE72ED3C3A396BAA48175FD927172B
+checksum=ab918be91f3b6f78982e233da0942008e55e5f3c8d158eb1f1f43d2ac0cdee09
 nostrip=yes
 
 do_extract() {
-	mkdir -p ${DESTDIR}
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/brave-browser_${version}_amd64.deb
+    mkdir -p ${DESTDIR}
+    ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/brave-browser_${version}_amd64.deb
 }
 
 do_install() {
-	tar xf data.tar.xz -C ${DESTDIR}
+    tar xf data.tar.xz -C ${DESTDIR}
 
-	# Install the icons
-	for size in 24 32 48 64 128 256; do
-		# Create the brave browser xdg directory
-		mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
+    # Install the icons
+    for size in 24 32 48 64 128 256; do
+        # Create the brave browser xdg directory
+        mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
 
-		# Copy the brave browser icon
-		mv ${DESTDIR}/opt/brave.com/brave/product_logo_${size}.png \
-		${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser.png
-	done
+        # Copy the brave browser icon
+        mv ${DESTDIR}/opt/brave.com/brave/product_logo_${size}.png         ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser.png
+    done
 
-	# Remove unused icons
-	rm ${DESTDIR}/opt/brave.com/brave/*.xpm
+    # Remove unused icons
+    rm ${DESTDIR}/opt/brave.com/brave/*.xpm
 
-	# Remove the Debian/Ubuntu crontab
-	rm -rf ${DESTDIR}/etc
-	rm -rf ${DESTDIR}/opt/brave.com/brave/cron
+    # Remove the Debian/Ubuntu crontab
+    rm -rf ${DESTDIR}/etc
+    rm -rf ${DESTDIR}/opt/brave.com/brave/cron
 }
