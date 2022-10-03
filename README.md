@@ -1,4 +1,4 @@
-# **You can use the [Flatpak instead](https://flathub.org/apps/details/com.brave.Browser), which probably more secure way to install Brave**
+**You can use the [Flatpak instead](https://flathub.org/apps/details/com.brave.Browser), which probably is more secure and easier way to install Brave**
 
 # brave-bin package for Void Linux
 
