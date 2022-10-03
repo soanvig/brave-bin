@@ -1,4 +1,4 @@
-# **This package is no longer being updated.  Use the [Flatpak instead](https://flathub.org/apps/details/com.brave.Browser).**
+# **You can use the [Flatpak instead](https://flathub.org/apps/details/com.brave.Browser), which probably more secure way to install Brave**
 
 # brave-bin package for Void Linux
 
@@ -9,14 +9,13 @@ The template file is prepared for use with [xbps-src](https://wiki.voidlinux.org
 
 ## Installation
 ```
-sudo xbps-install xtools
 git clone https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
 # Do the above once if not done already.
 # Copy this `brave-bin` folder under `srcpkgs` folder, then...
 ./xbps-src pkg brave-bin
-xi brave-bin
+sudo xbps-install --repository hostdir/binpkgs brave-bin
 ```
 
 
