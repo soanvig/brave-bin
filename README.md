@@ -18,6 +18,17 @@ cd void-packages
 sudo xbps-install --repository hostdir/binpkgs brave-bin
 ```
 
+## Updating template version
+
+Template version can be updated by running `update-template.fish` script.
+
+Dependencies:
+
+1. `fish` (shell)
+2. `gh` (GitHub CLI)
+3. `sha256sum`
+4. `envsubst` (part of `gettext`)
+
 
 **Help from:**
 
