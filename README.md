@@ -8,6 +8,7 @@ The template file is prepared for use with [xbps-src](https://wiki.voidlinux.org
 
 
 ## Installation
+
 ```
 git clone https://github.com/void-linux/void-packages
 cd void-packages
@@ -17,6 +18,10 @@ cd void-packages
 ./xbps-src pkg brave-bin
 sudo xbps-install --repository hostdir/binpkgs brave-bin
 ```
+
+## Auto update
+
+The repository is automatically updated to the latest Brave stable release using Github Actions schedule.
 
 ## Updating template version
 
