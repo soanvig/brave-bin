@@ -28,6 +28,7 @@ Dependencies:
 2. `gh` (GitHub CLI)
 3. `sha256sum`
 4. `envsubst` (part of `gettext`)
+5. `httpie`
 
 
 **Help from:**
