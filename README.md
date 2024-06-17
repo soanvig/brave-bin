@@ -16,7 +16,7 @@ cd void-packages
 ./xbps-src binary-bootstrap
 git clone https://github.com/soanvig/brave-bin ./srcpkgs/brave-bin
 
-# To intall and update brave:
+# To install and update Brave:
 git -C ./srcpkgs/brave-bin pull
 ./xbps-src pkg brave-bin
 sudo xbps-install --repository hostdir/binpkgs brave-bin
@@ -27,7 +27,7 @@ sudo xbps-install --repository hostdir/binpkgs brave-bin
 The repository is automatically updated to the latest Brave stable release using Github Actions schedule.
 By repeating installation commands described above you can update your Brave installation.
 
-## Updating template version (repository deveploment only!)
+## Updating template version (repository development only!)
 
 Template version can be updated by running `update-template.fish` script.
 
