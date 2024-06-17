@@ -7,14 +7,17 @@ This package provides Brave Browser, the browser based on Chromium with privacy 
 The template file is prepared for use with [xbps-src](https://wiki.voidlinux.org/Xbps-src) in Void Linux.
 
 
-## Installation
+## Installation & update
 
 ```
+# Setup - do it once if not done already:
 git clone https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
-# Do the above once if not done already.
-# Copy this `brave-bin` folder under `srcpkgs` folder, then...
+git clone https://github.com/soanvig/brave-bin ./srcpkgs/brave-bin
+
+# To intall and update brave:
+git -C ./srcpkgs/brave-bin pull
 ./xbps-src pkg brave-bin
 sudo xbps-install --repository hostdir/binpkgs brave-bin
 ```
@@ -22,8 +25,9 @@ sudo xbps-install --repository hostdir/binpkgs brave-bin
 ## Auto update
 
 The repository is automatically updated to the latest Brave stable release using Github Actions schedule.
+By repeating installation commands described above you can update your Brave installation.
 
-## Updating template version
+## Updating template version (repository deveploment only!)
 
 Template version can be updated by running `update-template.fish` script.
 
@@ -33,13 +37,3 @@ Dependencies:
 2. `gh` (GitHub CLI)
 3. `sha256sum`
 4. `envsubst` (part of `gettext`)
-
-
-**Help from:**
-
-- [Brave PR for Void Linux](https://github.com/void-linux/void-packages/pull/5511/files)
-- [iridium-deb PKGBUILD (AUR)](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=iridium-deb)
-
-## Credits
-
-- Originally from [reback00's "void-goodies" repo](https://notabug.org/reback00/void-goodies).  All I do is keep this package more up to date.
