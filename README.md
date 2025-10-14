@@ -33,7 +33,7 @@ Template version can be updated by running `update-template.fish` script.
 
 Dependencies:
 
-1. `fish` (shell)
+1. `/bin/sh` (shell) (or any POSIX compliant shell that /bin/sh is linked to)
 2. `gh` (GitHub CLI)
 3. `sha256sum`
 4. `envsubst` (part of `gettext`)
