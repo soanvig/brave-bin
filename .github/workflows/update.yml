@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: sudo apt update -y
       - run: sudo apt install -y gettext jq fish httpie
-      - run: fish ./update-template.fish
+      - run: sh ./update-template.sh
       - uses: EndBug/add-and-commit@v9
         with:
           message: 'Update version'
