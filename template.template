@@ -29,9 +29,6 @@ do_install() {
         mv ${DESTDIR}/opt/brave.com/brave/product_logo_${size}.png         ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser.png
     done
 
-    # Remove unused icons
-    rm ${DESTDIR}/opt/brave.com/brave/*.xpm
-
     # Remove the Debian/Ubuntu crontab
     rm -rf ${DESTDIR}/etc
     rm -rf ${DESTDIR}/opt/brave.com/brave/cron
