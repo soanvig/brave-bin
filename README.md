@@ -29,7 +29,7 @@ By repeating installation commands described above you can update your Brave ins
 
 ## Updating template version (repository development only!)
 
-Template version can be updated by running `update-template.fish` script.
+Template version can be updated by running `update-template.sh` script.
 
 Dependencies:
 
