@@ -35,5 +35,5 @@ Dependencies:
 
 1. `/bin/sh` (shell) (or any POSIX compliant shell that /bin/sh is linked to)
 2. `gh` (GitHub CLI)
-3. `sha256sum`
+3. `jq`
 4. `envsubst` (part of `gettext`)

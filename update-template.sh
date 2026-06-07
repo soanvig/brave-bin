@@ -17,17 +17,7 @@ fi
 
 VERSION="$LATEST_VERSION"
 DOWNLOAD_URL="https://github.com/brave/brave-browser/releases/download/v${VERSION}/brave-browser_${VERSION}_amd64.deb"
-
-echo "Downloading Brave to get checksum"
-
-gh release download -R brave/brave-browser -p "brave-browser*amd64.deb" --output "brave-bin.deb"
-
-CHECKSUM=$(sha256sum ./brave-bin.deb | awk '{ print $1 }')
-
-echo "Checksum computed"
-
-rm ./brave-bin.deb
-
+CHECKSUM=$(gh release view -R brave/brave-browser --json assets | jq -r '.assets | map(select(.name | test("brave-browser.+amd64.deb$"))) | first | .digest' | cut -d':' -f2)
 VERSION="$VERSION" CHECKSUM="$CHECKSUM" envsubst '${VERSION} ${CHECKSUM}' < ./template.template > template
 
 echo "Template updated"
