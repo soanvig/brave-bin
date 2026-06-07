@@ -10,28 +10,28 @@ depends="alsa-lib nss gtk+3"
 noverifyrdeps=yes
 license="Mozilla Public License Version 2.0"
 homepage="https://brave.com"
-distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_amd64.deb"
-checksum=
+distfiles="https://github.com/brave/brave-browser/releases/download/v/brave-browser__amd64.deb"
+checksum=e715b41e10ccf5c821ee1d2143e074371687c3b0ce6cb497ce0c22c68fa336d7
 nostrip=yes
 
 do_extract() {
-    mkdir -p ${DESTDIR}
-    ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/brave-browser_${version}_amd64.deb
+    mkdir -p 
+    ar x /-/brave-browser__amd64.deb
 }
 
 do_install() {
-    tar xf data.tar.xz -C ${DESTDIR}
+    tar xf data.tar.xz -C 
 
     # Install the icons
     for size in 24 32 48 64 128 256; do
         # Create the brave browser xdg directory
-        mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
+        mkdir -p /usr/share/icons/hicolor/x/apps
 
         # Copy the brave browser icon
-        mv ${DESTDIR}/opt/brave.com/brave/product_logo_${size}.png         ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser.png
+        mv /opt/brave.com/brave/product_logo_.png         /usr/share/icons/hicolor/x/apps/brave-browser.png
     done
 
     # Remove the Debian/Ubuntu crontab
-    rm -rf ${DESTDIR}/etc
-    rm -rf ${DESTDIR}/opt/brave.com/brave/cron
+    rm -rf /etc
+    rm -rf /opt/brave.com/brave/cron
 }
